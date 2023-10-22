@@ -1,6 +1,7 @@
 export const songsDirectory = [
     {
       "id": 1,
+      "songId": "rememberme",
       "name": "Remember Me",
       "artist": "Miguel",
       "src": "",
@@ -8,6 +9,7 @@ export const songsDirectory = [
     },
     {
       "id": 2,
+      "songId": "wavinflag",
       "name": "Wavin flag",
       "artist": "K'naan",
       "src": "",
@@ -15,6 +17,7 @@ export const songsDirectory = [
     },
     {
       "id": 3,
+      "songId": "people",
       "name": "People",
       "artist": "Libianca",
       "src": "",
@@ -22,6 +25,7 @@ export const songsDirectory = [
     },
     {
       "id": 4,
+      "songId": "luciddreams",
       "name": "Lucid dreams",
       "artist": "Juice WRLD",
       "src": "",
@@ -29,6 +33,7 @@ export const songsDirectory = [
     },
     {
       "id": 5,
+      "songId": "blindinglights",
       "name": "Blinding lights",
       "artist": "Weekend",
       "src": "",
