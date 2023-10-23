@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import './globals.css'
+import { Providers } from '@/redux/provider'
 
 export const metadata: Metadata = {
   title: 'Music player',
@@ -15,7 +16,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <div className='gradient' />
         </div>
         <main className='app'>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </main>
       </body>
     </html>
