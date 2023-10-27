@@ -1,13 +1,17 @@
 'use client';
 
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import counterReducer from './features/counter-slice';
 import queueReducer from './features/queue-slice';
+import musicDBReducer from './features/musicDB-slice';
+
 
 export const store = configureStore({
     reducer: {
         queue: queueReducer,
-        counter: counterReducer
+        counter: counterReducer,
+        musicDB: musicDBReducer
     }
 })
 

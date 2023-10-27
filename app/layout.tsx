@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
+      <head>
+        <link rel="icon" href="/icons/music-favicon.png" sizes="any"/>
+      </head>
       <body>
         <div className='main'>
           <div className='gradient' />
