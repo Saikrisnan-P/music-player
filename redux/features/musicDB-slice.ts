@@ -1,15 +1,7 @@
 'use client';
 
+import { Music } from '@/app/resources/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-export type Music = {
-    id: number;
-    songId: string;
-    name: string;
-    artist: string;
-    src: string;
-    img: string;
-}
 
 type InitialState = {
     value: Music[]

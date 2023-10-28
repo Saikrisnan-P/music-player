@@ -7,7 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './styles/styles.css'
 import React, { useEffect, useState } from 'react';
-import { Music, setDb } from '@/redux/features/musicDB-slice';
+import { setDb } from '@/redux/features/musicDB-slice';
+import { Music } from './resources/types';
 
 const HomePage = () => {
 
@@ -15,12 +16,6 @@ const HomePage = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(setDb(songsDirectory as Music[]));
-    console.log('eff called')
-  }, []);
-
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-      setLoaded(true)
   }, []);
 
   return (

@@ -1,11 +1,7 @@
 'use client';
 
+import { QueueItem } from '@/app/resources/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-export type QueueItem = {
-    name: string,
-    author: string
-}
 
 type InitialState = {
     value: QueueItem[]
