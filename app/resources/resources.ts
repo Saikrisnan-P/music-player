@@ -15,29 +15,29 @@ export const songsDirectory = [
       "src": "",
       "img": "/images/wavinflag.jpg"
     },
-    // {
-    //   "id": 3,
-    //   "songId": "people",
-    //   "name": "People",
-    //   "artist": "Libianca",
-    //   "src": "",
-    //   "img": "/images/people.jpg"
-    // },
-    // {
-    //   "id": 4,
-    //   "songId": "luciddreams",
-    //   "name": "Lucid dreams",
-    //   "artist": "Juice WRLD",
-    //   "src": "",
-    //   "img": "/images/luciddreams.jpg"
-    // },
-    // {
-    //   "id": 5,
-    //   "songId": "blindinglights",
-    //   "name": "Blinding lights",
-    //   "artist": "Weekend",
-    //   "src": "",
-    //   "img": "/images/blindinglights.jpg"
-    // }
+    {
+      "id": 3,
+      "songId": "people",
+      "name": "People",
+      "artist": "Libianca",
+      "src": "",
+      "img": "/images/people.jpg"
+    },
+    {
+      "id": 4,
+      "songId": "luciddreams",
+      "name": "Lucid dreams",
+      "artist": "Juice WRLD",
+      "src": "",
+      "img": "/images/luciddreams.jpg"
+    },
+    {
+      "id": 5,
+      "songId": "blindinglights",
+      "name": "Blinding lights",
+      "artist": "Weekend",
+      "src": "",
+      "img": "/images/blindinglights.jpg"
+    }
   ]
   

@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './styles/styles.css'
 import React, { useEffect, useState } from 'react';
 import { setDb } from '@/redux/features/musicDB-slice';
+import MusicCards from './components/MusicCards';
 import { Music } from './resources/types';
 
 const HomePage = () => {
@@ -23,6 +24,7 @@ const HomePage = () => {
       <header>
             <h1 className='animate-charcter'>Music Player</h1>
         </header>
+        <MusicCards></MusicCards>
     </div>
   )
 }
