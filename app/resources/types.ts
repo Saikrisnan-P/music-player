@@ -7,11 +7,6 @@ export type Music = {
     img: string;
 }
 
-export type QueueItem = {
-    name: string,
-    author: string
-}
-
 export interface CounterState {
     value: number
 }
