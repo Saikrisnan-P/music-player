@@ -1,0 +1,13 @@
+.current-music-cont {
+    max-width: 20%;
+    align-items: center;
+}
+
+.song-image {
+    max-width: 35%;
+    margin: 0px 3px;
+}
+
+.song-details .author {
+    opacity: 0.5;
+}

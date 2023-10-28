@@ -1,0 +1,28 @@
+.player-controls-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 5px;
+    align-items: center;
+}
+
+.play-controls img {
+    width: 25%;
+    cursor: pointer;
+    margin: 0px 5px;
+    max-width: 30px;
+}
+
+.timing-volume {
+    align-items: center;
+}
+
+.slider {
+    width: 100px;
+    margin: 0px 10px;
+}
+
+.volume-icon {
+    width: 15%;
+    cursor: pointer;
+}

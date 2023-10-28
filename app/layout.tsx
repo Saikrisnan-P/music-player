@@ -13,10 +13,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='en'>
       <head>
         <link rel="icon" href="/icons/music-favicon.png" sizes="any"/>
-        <a target="_blank" href="https://icons8.com/icon/O42fBxIp3wbU/audio">Audio</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
       </head>
       <body>
         <div className='main'>
+          <a className='icons-link' target="_blank" href="https://icons8.com">Icons used by Icons8</a>
           <div className='gradient' />
         </div>
         <main className='app'>
