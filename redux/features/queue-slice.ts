@@ -1,10 +1,10 @@
 'use client';
 
-import { QueueItem } from '@/app/resources/types';
+import { Music } from '@/app/resources/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type InitialState = {
-    value: QueueItem[]
+    value: Music[]
 }
 
 const initialState: InitialState = {
@@ -18,10 +18,10 @@ export const queue = createSlice ({
         clearQueue: () => {
             return initialState
         },
-        addNewItem: (state, action: PayloadAction<QueueItem>) => {
+        addNewItem: (state, action: PayloadAction<Music>) => {
             return { value: [ ...state.value, action.payload ] }
         },
-        removeAnItem: (state, action: PayloadAction<QueueItem>) => {
+        removeAnItem: (state, action: PayloadAction<Music>) => {
             const copyList = [ ...state.value ];
             const indexToRemove = state.value.findIndex((item) => {
                 return item.name === action.payload.name;

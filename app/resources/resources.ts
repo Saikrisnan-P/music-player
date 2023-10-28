@@ -5,7 +5,7 @@ export const songsDirectory = [
       "name": "Remember Me",
       "artist": "Miguel",
       "src": "",
-      "img": ""
+      "img": "/images/rememberme.jpg"
     },
     {
       "id": 2,
@@ -13,31 +13,31 @@ export const songsDirectory = [
       "name": "Wavin flag",
       "artist": "K'naan",
       "src": "",
-      "img": ""
+      "img": "/images/wavinflag.jpg"
     },
-    {
-      "id": 3,
-      "songId": "people",
-      "name": "People",
-      "artist": "Libianca",
-      "src": "",
-      "img": ""
-    },
-    {
-      "id": 4,
-      "songId": "luciddreams",
-      "name": "Lucid dreams",
-      "artist": "Juice WRLD",
-      "src": "",
-      "img": ""
-    },
-    {
-      "id": 5,
-      "songId": "blindinglights",
-      "name": "Blinding lights",
-      "artist": "Weekend",
-      "src": "",
-      "img": ""
-    }
+    // {
+    //   "id": 3,
+    //   "songId": "people",
+    //   "name": "People",
+    //   "artist": "Libianca",
+    //   "src": "",
+    //   "img": "/images/people.jpg"
+    // },
+    // {
+    //   "id": 4,
+    //   "songId": "luciddreams",
+    //   "name": "Lucid dreams",
+    //   "artist": "Juice WRLD",
+    //   "src": "",
+    //   "img": "/images/luciddreams.jpg"
+    // },
+    // {
+    //   "id": 5,
+    //   "songId": "blindinglights",
+    //   "name": "Blinding lights",
+    //   "artist": "Weekend",
+    //   "src": "",
+    //   "img": "/images/blindinglights.jpg"
+    // }
   ]
   
