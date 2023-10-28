@@ -5,7 +5,6 @@
 header {
     display: block;
     background-color: #333;
-    text-align: center;
     padding: 1rem;
 }
 
@@ -26,6 +25,7 @@ header {
     animation: textclip 2s linear infinite;
     display: inline-block;
     font-size: 18px;
+    font-weight: 700;
 }
 
 .player-container {  

@@ -4,8 +4,10 @@
 }
 
 .song-image {
-    max-width: 35%;
+    max-width: 20%;
+    max-height: 75%;
     margin: 0px 3px;
+    aspect-ratio: 1/1;
 }
 
 .song-details .author {

@@ -1,9 +1,29 @@
+.whole-player-container {
+    width: 100%;
+    height: 100%;
+}
+
+.playback-slider {
+    /* position: absolute; */
+    top: 0px;
+    padding: 0px;
+}
+
+.current-song-cont{
+    width: 37%;
+}
+
 .player-controls-container{
     display: flex;
     width: 100%;
+    height: 100%;
     justify-content: space-between;
     padding: 0px 5px;
     align-items: center;
+}
+
+.play-controls {
+    width: 27%;
 }
 
 .play-controls img {
@@ -14,6 +34,7 @@
 }
 
 .timing-volume {
+    /* width: 36%; */
     align-items: center;
 }
 
