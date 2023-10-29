@@ -26,10 +26,10 @@ const HomePage = () => {
       </header>
       <MusicCards></MusicCards>
       <footer className='player-container'>
-        <MusicPlayer></MusicPlayer>
-        {/* {
-          musicQueue.length === 0 ? <div>Please select a song to continue</div> : <MusicPlayer></MusicPlayer>
-        } */}
+        {/* <MusicPlayer></MusicPlayer> */}
+        {
+          musicQueue.length === 0 ? <div className='song-select-text'>Please select a song to continue</div> : <MusicPlayer></MusicPlayer>
+        }
       </footer>
     </div>
   )
