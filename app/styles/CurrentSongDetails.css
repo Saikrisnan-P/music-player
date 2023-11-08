@@ -14,3 +14,7 @@
 .song-details .author {
     opacity: 0.5;
 }
+
+.song-details .name {
+    width: max-content;
+}

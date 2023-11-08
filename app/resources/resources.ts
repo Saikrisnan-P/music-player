@@ -4,7 +4,7 @@ export const songsDirectory = [
       "songId": "rememberme",
       "name": "Remember Me",
       "artist": "Miguel",
-      "src": "",
+      "src": "/audio-files/rememberme.mp3",
       "img": "/images/rememberme.jpg"
     },
     {
@@ -12,7 +12,7 @@ export const songsDirectory = [
       "songId": "wavinflag",
       "name": "Wavin flag",
       "artist": "K'naan",
-      "src": "",
+      "src": "/audio-files/wavinflag.mp3",
       "img": "/images/wavinflag.jpg"
     },
     {
@@ -20,7 +20,7 @@ export const songsDirectory = [
       "songId": "people",
       "name": "People",
       "artist": "Libianca",
-      "src": "",
+      "src": "/audio-files/people.mp3",
       "img": "/images/people.jpg"
     },
     {
@@ -28,7 +28,7 @@ export const songsDirectory = [
       "songId": "luciddreams",
       "name": "Lucid dreams",
       "artist": "Juice WRLD",
-      "src": "",
+      "src": "/audio-files/luciddreams.mp3",
       "img": "/images/luciddreams.jpg"
     },
     {
@@ -36,7 +36,7 @@ export const songsDirectory = [
       "songId": "blindinglights",
       "name": "Blinding lights",
       "artist": "Weekend",
-      "src": "",
+      "src": "/audio-files/blindinglights.mp3",
       "img": "/images/blindinglights.jpg"
     }
   ]

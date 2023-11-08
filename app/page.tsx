@@ -4,7 +4,7 @@ import './styles/styles.css'
 import type { RootState } from '@/redux/store';
 import { songsDirectory } from '@/app/resources/resources'
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { setDb } from '@/redux/features/musicDB-slice';
 import MusicCards from './components/MusicCards';
 import { Music } from './resources/types';
@@ -26,7 +26,6 @@ const HomePage = () => {
       </header>
       <MusicCards></MusicCards>
       <footer className='player-container'>
-        {/* <MusicPlayer></MusicPlayer> */}
         {
           musicQueue.length === 0 ? <div className='song-select-text'>Please select a song to continue</div> : <MusicPlayer></MusicPlayer>
         }
