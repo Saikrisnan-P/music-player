@@ -1,29 +1,84 @@
 import { RootState } from '@/redux/store';
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import '@/app/styles/MusicPlayer.css'
 import '@/app/styles/styles.css'
 import { Slider } from '@mui/material';
 import CurrentSongDetails from './CurrentSongDetails';
+import { Music } from '../resources/types';
+import { removeFirstFromQueue } from '@/redux/features/queue-slice';
 
 
 const MusicPlayer = () => {
     const musicQueue = useSelector((state: RootState) => state.queue.value);
+    const dispatch = useDispatch();
+    let audio = new Audio();
+    let intervalHandler: NodeJS.Timeout;
+
     const [isPlaying, setPlayState] = useState(false);
     const [seekTime, setSeekTime] = useState(0);
     const [totalTime, setTotalTime] = useState(60);
     const [isMuted, doMute] = useState(false);
     const [volume, setVolume] = useState(50);
+    const [currentMusic, setCurrentMusic] = useState<Music>({} as Music);
+    const audioElement = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        const firstSong = musicQueue[0];
+        if (musicQueue.length && firstSong) {
+            setCurrentMusic(firstSong);
+        }
+    }, [musicQueue]);
+
+    useEffect(() => {
+        let audio = audioElement.current;
+        if (audio && !audio?.src.includes(currentMusic.src)) {
+            audio.src = currentMusic.src;
+        }
+        if (isPlaying) {
+            playAudio(currentMusic.src);
+        } else {
+            if (audio) {
+                audio.pause();
+            }
+        }
+    }, [currentMusic, isPlaying]);
+
+    useEffect(() => {
+        const audio = audioElement.current;
+        if(audio && isPlaying){
+            intervalHandler = setInterval(() => {
+                setSeekTime(Math.floor(audio.currentTime));
+            }, 1000)
+        } else if(!audio) {
+            clearInterval(intervalHandler);
+        }
+    });
+
+    useEffect(() => {
+        const audio = audioElement.current;
+        console.log('called from 2nd');
+        if (audio) {
+            audio.onloadedmetadata = (musicLoadEvent) => {
+                setTotalTime(audio.duration);
+                console.log('meta loaded', musicLoadEvent);
+            };
+        }
+      }, []);
 
     const getTimeInFormat = (time: number): string => {
         const minutes = Math.floor(time/60).toString();
         const seconds = (time%60).toString();
-        console.log(time, minutes, seconds, 'dfd', `${minutes.padStart(2, '0').slice(0,3)}:${seconds.padStart(2, '0').slice(0,3)}`);
-        return `${minutes.padStart(2, '0').slice(0,3)}:${seconds.padStart(2, '0').slice(0,3)}`;
+        return `${minutes.padStart(2, '0').slice(0,3)}:${seconds.padStart(2, '0').slice(0,3)}`.replace(/[.]/g, '');
     }
 
     const handleVolumeUpdate = (event: Event, value: number | number[]): void => {
-        typeof value === 'number' ? setVolume(value) : setVolume(value[0]);
+        let audio = audioElement.current;
+        const volume = typeof value === 'number' ? value : value[0];
+        setVolume(volume);
+        if (audio) {
+            audio.volume = volume/100;
+        }
     }
 
     const handlePlayPause = (): void => {
@@ -31,16 +86,27 @@ const MusicPlayer = () => {
     }
 
     const handlePlaybackSliderUpdate = (event: Event, value: number | number[]): void => {
-        typeof value === 'number' ? setSeekTime(value) : setSeekTime(value[0]);
+        let audio = audioElement.current;
+        if(typeof value === 'number' && audio) {
+            setSeekTime(value);
+            audio.currentTime = value;
+        }
     }
 
     const toggleMute = (): void => {
         doMute(!isMuted);
     }
 
+    const playAudio = (src: string) => {
+        let audio = audioElement.current;
+        if(audio) {
+            audio.play();
+        }
+    }
+
   return (
     <div className="flex-column whole-player-container">
-        <Slider className='playback-slider' value={seekTime} onChange={handlePlaybackSliderUpdate}></Slider>
+        <Slider className='playback-slider' value={seekTime} onChange={handlePlaybackSliderUpdate} max={totalTime}></Slider>
         <div className='player-controls-container'>
             <div className='current-song-cont'>
                 <CurrentSongDetails music={musicQueue[0]}></CurrentSongDetails>
@@ -57,6 +123,7 @@ const MusicPlayer = () => {
                     {`${getTimeInFormat(seekTime)} / ${getTimeInFormat(totalTime)}`}
                 </div>
                 <Slider className="volume-slider" value={volume} onChange={handleVolumeUpdate}></Slider>
+                <audio ref={audioElement}></audio>
                 { isMuted ? <img className='volume-icon' src="/icons/player-volume.png" alt="Volume" onClick={toggleMute}/> : <img className='volume-icon' src="/icons/player-mute.png" alt="Mute" onClick={toggleMute}/> }
             </div>
         </div>
