@@ -16,6 +16,11 @@
   }
 }
 
+.icons-link {
+  position: absolute;
+  opacity: 0.05;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
