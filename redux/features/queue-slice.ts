@@ -32,8 +32,13 @@ export const queue = createSlice ({
             }
             return { value: [ ...copyList ] }
         },
+        removeFirstFromQueue: (state) => {
+            const copyList = [ ...state.value ];
+            copyList.shift();
+            return { value: [ ...copyList ] };
+        }
     }
 });
 
-export const { clearQueue, addNewItem, removeAnItem } = queue.actions;
+export const { clearQueue, addNewItem, removeAnItem, removeFirstFromQueue } = queue.actions;
 export default queue.reducer;

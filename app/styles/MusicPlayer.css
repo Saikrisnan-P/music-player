@@ -4,13 +4,12 @@
 }
 
 .playback-slider {
-    /* position: absolute; */
     top: 0px;
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .current-song-cont{
-    width: 37%;
+    width: 35%;
 }
 
 .player-controls-container{
@@ -34,12 +33,15 @@
 }
 
 .timing-volume {
-    /* width: 36%; */
     align-items: center;
 }
 
-.slider {
-    width: 100px;
+.timer {
+    min-width: 91px;
+}
+
+.volume-slider {
+    min-width: 100px;
     margin: 0px 10px;
 }
 

@@ -4,6 +4,7 @@
 }
 
 .song-image {
+    min-width: 45px;
     max-width: 20%;
     max-height: 75%;
     margin: 0px 3px;
@@ -12,4 +13,8 @@
 
 .song-details .author {
     opacity: 0.5;
+}
+
+.song-details .name {
+    width: max-content;
 }
