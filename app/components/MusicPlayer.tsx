@@ -63,6 +63,9 @@ const MusicPlayer = () => {
                 setTotalTime(audio.duration);
                 console.log('meta loaded', musicLoadEvent);
             };
+            audio.onended = () => {
+                dispatch(removeFirstFromQueue());
+            }
         }
       }, []);
 
@@ -94,7 +97,11 @@ const MusicPlayer = () => {
     }
 
     const toggleMute = (): void => {
+        let audio = audioElement.current;
         doMute(!isMuted);
+        if (audio) {
+            audio.volume = isMuted ? 0 : volume/100;
+        }
     }
 
     const playAudio = (src: string) => {
@@ -102,6 +109,18 @@ const MusicPlayer = () => {
         if(audio) {
             audio.play();
         }
+    }
+
+    const goToSongStart = () => {
+        let audio = audioElement.current;
+        if(audio) {
+            setSeekTime(0);
+            audio.currentTime = 0;
+        }
+    }
+
+    const nextSong = () => {
+        dispatch(removeFirstFromQueue());
     }
 
   return (
@@ -112,11 +131,11 @@ const MusicPlayer = () => {
                 <CurrentSongDetails music={musicQueue[0]}></CurrentSongDetails>
             </div>
             <div className="play-controls flex-row">
-                <img src="/icons/player-previous.png" alt="Go to start" />
+                <img src="/icons/player-previous.png" alt="Go to start" onClick={goToSongStart}/>
                 {
                     isPlaying ? <img src="/icons/player-pause.png" alt="Pause button" onClick={handlePlayPause}/> : <img src="/icons/player-play.png" alt="Play button" onClick={handlePlayPause}/>
                 }
-                <img src="/icons/player-next.png" alt="Next song" />
+                <img src="/icons/player-next.png" alt="Next song" onClick={nextSong}/>
             </div>
             <div className="timing-volume flex-row">
                 <div className="timer">
