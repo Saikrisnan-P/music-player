@@ -1,6 +1,7 @@
 .current-music-cont {
     max-width: 20%;
     align-items: center;
+    color: white;
 }
 
 .song-image {
