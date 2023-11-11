@@ -5,6 +5,7 @@ export type Music = {
     artist: string;
     src: string;
     img: string;
+    isPlaying?: boolean;
 }
 
 export interface CounterState {
