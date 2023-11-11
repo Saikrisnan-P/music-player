@@ -38,6 +38,14 @@ export const songsDirectory = [
       "artist": "Weekend",
       "src": "/audio-files/blindinglights.mp3",
       "img": "/images/blindinglights.jpg"
+    },
+    {
+      "id": 6,
+      "songId": "22",
+      "name": "22",
+      "artist": "Taylor swift",
+      "src": "/audio-files/22.mp3",
+      "img": "/images/22.jpg"
     }
   ]
   
