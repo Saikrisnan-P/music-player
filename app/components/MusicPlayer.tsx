@@ -27,6 +27,9 @@ const MusicPlayer = () => {
         const firstSong = musicQueue[0];
         if (musicQueue.length && firstSong) {
             setCurrentMusic(firstSong);
+            if (firstSong.isPlaying) {
+                setPlayState(true);
+            }
         }
     }, [musicQueue]);
 

@@ -6,7 +6,6 @@ import MusicCard from './MusicCard';
 
 const MusicCards = () => {
     const musicDB = useSelector((state: RootState) => state.musicDB.value);
-    // const dispatch = useDispatch();
 
     const [loaded, setLoaded] = useState(false);
     useEffect(() => {

@@ -12,7 +12,7 @@ const MusicCard = ({ music }: { music: Music}) => {
 
   const playMusic = (music: Music) => {
     dispatch(clearQueue());
-    dispatch(addNewItem(music));
+    dispatch(addNewItem({ ...music, isPlaying: true }));
   }
   
   const addToQueue = (music: Music) => {
